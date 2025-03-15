@@ -8,7 +8,6 @@ export async function GET() {
       title: "Near Multichain AI Agent",
       description: "API for the Near Multichain AI Agent",
       version: "1.0.0",
-      category: "defi",
     },
     servers: [
       {
