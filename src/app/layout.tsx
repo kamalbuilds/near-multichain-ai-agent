@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Bitcoin Agent",
+  title: "Near Multichain AI Agent",
   description:
     "An AI agent that uses NEAR chain signatures to interact with Bitcoin L1.",
 };

@@ -5,26 +5,27 @@ export async function GET() {
   const pluginData = {
     openapi: "3.0.0",
     info: {
-      title: "Bitcoin Agent",
-      description: "API for the Bitcoin Agent",
+      title: "Near Multichain AI Agent",
+      description: "API for the Near Multichain AI Agent",
       version: "1.0.0",
+      category: "defi",
     },
     servers: [
       {
-        url: "https://bitcoin-bitte-agent.vercel.app",
+        url: "https://near-multichain-ai-agent.vercel.app",
       },
     ],
     "x-mb": {
       "account-id": ACCOUNT_ID,
       assistant: {
-        name: "Bitcoin Agent",
+        name: "Near Multichain AI Agent",
         description:
           "An assistant that answers with blockchain information, tells the user's near account id, show BTC wallet address and BTC balance, creates a Bitcon txn that utilizes near chain signatures, sends signed MPC transaction on bitcoin testnet and flips coins.",
         instructions:
           "You create near txns powered by chain signatures and send them on btc testnet, give blockchain information, tell the user's near account id, get BTC balance and flip coins. For blockchain transactions, first generate a transaction payload using the endpoint /api/tools/create-btc-mpc-txn, then explicitly use the 'generate-transaction' tool to sign received payload using NEAR account. After this txn is signed, use 'api/tools/broadcast-btc-txn' to relay it to BTC testnet, make sure to provide the 'txHash' (received from signed near txn), 'btcReceiver' address, 'btcAmountInSatoshi' parameters when calling /api/tools/broadcast-btc-txn. If any parameter is not provided, then ask for it explicitly.",
         tools: [{ type: "generate-transaction" }, { type: "sign-message" }],
         image: "https://cryptologos.cc/logos/bitcoin-btc-logo.svg",
-        categories: ["Bitcoin", "DeFi"],
+        categories: ["Bitcoin", "Defi"],
       },
     },
     paths: {
